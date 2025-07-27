@@ -9,9 +9,9 @@ const Hero = () => {
         <img 
           src={heroImage} 
           alt="Mechatronics Engineering" 
-          className="w-full h-full object-cover opacity-10"
+          className="w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 to-background/50" />
       </div>
       
       {/* Content */}
@@ -20,7 +20,7 @@ const Hero = () => {
           <p className="small-caps text-muted-foreground mb-4">
             mechatronics engineer
           </p>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tighter">
             engineering the
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
               future
@@ -57,12 +57,12 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <button className="btn-primary">
+            <a href="/projects" className="btn-primary">
               view my work
-            </button>
-            <button className="btn-secondary">
+            </a>
+            <a href="/resume.pdf" target="_blank" className="btn-secondary">
               download resume
-            </button>
+            </a>
           </div>
         </div>
         

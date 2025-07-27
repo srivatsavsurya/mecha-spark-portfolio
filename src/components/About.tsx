@@ -1,7 +1,9 @@
 import { Code, Cog, Cpu, Zap } from "lucide-react";
 import profileImage from "@/assets/profile-image.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
+  useScrollAnimation();
   const skills = [
     {
       icon: <Cog className="w-8 h-8" />,
@@ -30,7 +32,7 @@ const About = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="small-caps text-muted-foreground mb-4">about me</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tighter">
             from code to
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
               creation
@@ -40,7 +42,7 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Profile Image */}
-          <div className="slide-up">
+          <div className="slide-up fade-in">
             <div className="relative max-w-md mx-auto">
               <img 
                 src={profileImage} 
@@ -52,7 +54,7 @@ const About = () => {
           </div>
 
           {/* About Content */}
-          <div className="slide-up">
+          <div className="slide-up fade-in">
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               after graduating with a degree in mechatronics engineering, i spent a year at 
               <span className="text-foreground font-medium"> alfatkg </span> 
@@ -84,7 +86,7 @@ const About = () => {
           {skills.map((skill, index) => (
             <div 
               key={skill.title}
-              className="card-minimal hover-lift text-center"
+              className="card-minimal hover-lift text-center scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-primary mb-4 flex justify-center">

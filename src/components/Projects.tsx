@@ -38,7 +38,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="small-caps text-muted-foreground mb-4">portfolio</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tighter">
             featured
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
               projects
@@ -53,7 +53,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={project.title}
-              className="group card-minimal hover-lift overflow-hidden"
+              className="group card-minimal hover-lift overflow-hidden fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Project Image */}
@@ -114,9 +114,9 @@ const Projects = () => {
 
         {/* View All Projects Button */}
         <div className="text-center mt-12">
-          <button className="btn-primary">
+          <a href="/projects" className="btn-primary">
             view all projects
-          </button>
+          </a>
         </div>
       </div>
     </section>

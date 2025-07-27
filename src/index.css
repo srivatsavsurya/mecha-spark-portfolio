@@ -51,6 +51,10 @@ All colors MUST be HSL.
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Enhanced colors */
+    --primary-glow: 221 83% 60%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -126,11 +130,19 @@ All colors MUST be HSL.
   
   /* Apple-style buttons */
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02];
+    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply from-blue-600 to-blue-700 shadow-xl;
   }
   
   .btn-secondary {
-    @apply bg-card border border-border text-foreground px-6 py-3 rounded-xl font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02];
+    @apply bg-card border border-border text-foreground px-6 py-3 rounded-xl font-medium shadow-sm transition-all duration-300;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-accent text-accent-foreground shadow-md;
   }
   
   /* Card styles */
@@ -143,33 +155,42 @@ All colors MUST be HSL.
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
   }
   
+  /* Scroll Animations */
   .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-slow);
   }
-  
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-  }
-}
-
-@keyframes fadeIn {
-  from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(50px);
+    transition: var(--transition-slow);
   }
-  to {
+
+  .slide-up.visible {
     opacity: 1;
     transform: translateY(0);
   }
+
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: var(--transition-slow);
+  }
+
+  .scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }

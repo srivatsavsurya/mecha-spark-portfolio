@@ -22,6 +22,10 @@ const Navigation = () => {
   ];
 
   const scrollToSection = (href: string) => {
+    if (href === "#projects") {
+      window.location.href = "/projects";
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -57,9 +61,6 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
-            <button className="btn-primary text-sm">
-              hire me
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,9 +86,6 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <button className="btn-primary w-full mt-4">
-                hire me
-              </button>
             </div>
           </div>
         )}
