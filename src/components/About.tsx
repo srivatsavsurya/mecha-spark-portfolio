@@ -1,5 +1,5 @@
 import { Code, Cog, Cpu, Zap } from "lucide-react";
-import profileImage from "@/assets/profile-image.jpg";
+import profileImage from "@/assets/profile-image.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
@@ -33,9 +33,9 @@ const About = () => {
         <div className="text-center mb-16">
           <p className="small-caps text-muted-foreground mb-4">about me</p>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tighter">
-            from code to
+            Not just thinking outside the box —         
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
-              creation
+              I probably built the box.    
             </span>
           </h2>
         </div>
@@ -49,10 +49,11 @@ const About = () => {
                 alt="Profile" 
                 className="w-full rounded-3xl shadow-large"
               />
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-primary rounded-3xl opacity-20 blur-xl" />
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-primary rounded-3xl opacity-20 blur-xl"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-primary rounded-3xl opacity-20 blur-xl"></div>
             </div>
-          </div>
-
+          </div> {/* Closing the profile image div */}
+          
           {/* About Content */}
           <div className="slide-up fade-in">
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
@@ -86,7 +87,7 @@ const About = () => {
           {skills.map((skill, index) => (
             <div 
               key={skill.title}
-              className="card-minimal hover-lift text-center scale-in"
+              className="card-minimal hover-lift text-center scale-in p-4s rounded-lg bg-card border border-border transition-transform duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-primary mb-4 flex justify-center">

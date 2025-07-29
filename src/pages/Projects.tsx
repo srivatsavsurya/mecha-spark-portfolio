@@ -328,7 +328,7 @@ const Projects = () => {
                   </div>
 
                   {/* Project Content */}
-                  <div>
+                  <div className="p-3">
                     <span className="small-caps text-primary text-sm font-medium">
                       {project.category}
                     </span>
