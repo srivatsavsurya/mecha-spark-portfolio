@@ -123,14 +123,18 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Small caps utility */
+  /* =================================
+     TYPOGRAPHY UTILITIES
+     ================================= */
   .small-caps {
-    @apply text-sm font-medium tracking-wider uppercase;
+    @apply text-sm font-medium tracking-wider uppercase font-manrope;
   }
   
-  /* Apple-style buttons */
+  /* =================================
+     BUTTON COMPONENTS
+     ================================= */
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg transition-all duration-300;
+    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg transition-all duration-300 font-manrope;
   }
   
   .btn-primary:hover {
@@ -138,24 +142,30 @@ All colors MUST be HSL.
   }
   
   .btn-secondary {
-    @apply bg-card border border-border text-foreground px-6 py-3 rounded-xl font-medium shadow-sm transition-all duration-300;
+    @apply bg-card border border-border text-foreground px-6 py-3 rounded-xl font-medium shadow-sm transition-all duration-300 font-manrope;
   }
   
   .btn-secondary:hover {
-    @apply bg-accent text-accent-foreground shadow-md;
+    @apply shadow-md;
   }
   
-  /* Card styles */
+  /* =================================
+     CARD COMPONENTS
+     ================================= */
   .card-minimal {
-    @apply bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300;
+    @apply bg-card border border-border rounded-2xl p-4 shadow-sm hover:shadow-md transition-all duration-300;
   }
   
-  /* Micro-animations */
+  /* =================================
+     ANIMATION UTILITIES
+     ================================= */
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
   }
   
-  /* Scroll Animations */
+  /* =================================
+     SCROLL ANIMATIONS
+     ================================= */
   .fade-in {
     opacity: 0;
     transform: translateY(30px);
