@@ -14,7 +14,7 @@ const Projects = () => {
       demo: "#"
     },
     {
-      title: "smart manufacturing system",
+      title: "smart manufacturing system", 
       category: "automation",
       description: "developed a complete automation solution for quality control using machine vision and robotic arms.",
       image: project2,
@@ -23,11 +23,38 @@ const Projects = () => {
       demo: "#"
     },
     {
-      title: "iot sensor network",
-      category: "embedded systems",
-      description: "created a wireless sensor network for environmental monitoring with real-time data visualization.",
+      title: "6-dof industrial robot arm",
+      category: "robotics", 
+      description: "designed and programmed a 6-degree-of-freedom industrial robot arm with precise positioning control.",
       image: project1,
-      technologies: ["arduino", "mqtt", "react", "mongodb"],
+      technologies: ["solidworks", "matlab", "c++", "servo control"],
+      github: "#",
+      demo: "#"
+    },
+    {
+      title: "cnc machine automation",
+      category: "automation",
+      description: "automated cnc machining operations with robotic loading/unloading systems and real-time monitoring.",
+      image: project2,
+      technologies: ["fanuc", "ladder logic", "hmi", "scada"],
+      github: "#", 
+      demo: "#"
+    },
+    {
+      title: "autonomous drone swarm",
+      category: "aerial robotics",
+      description: "developed a coordinated drone swarm system for search and rescue operations with autonomous navigation.",
+      image: project1,
+      technologies: ["pixhawk", "mavlink", "python", "opencv"],
+      github: "#",
+      demo: "#"
+    },
+    {
+      title: "industrial iot monitoring",
+      category: "embedded systems",
+      description: "created a wireless sensor network for industrial equipment monitoring with predictive maintenance.",
+      image: project2,
+      technologies: ["esp32", "lorawan", "tensorflow", "influxdb"],
       github: "#",
       demo: "#"
     }

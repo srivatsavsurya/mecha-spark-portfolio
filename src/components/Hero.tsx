@@ -18,16 +18,17 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="fade-in">
           <p className="small-caps text-muted-foreground mb-4">
-            mechatronics engineer
+            mechatronics engineer • robotics specialist • automation expert
           </p>
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tighter">
-            engineering the
+            building intelligent
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
-              future
+              robotic systems
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            bridging software and robotics to create intelligent mechanical systems
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            experienced in ros, plc programming, machine vision, and embedded systems. 
+            seeking mechatronics engineering roles in robotics, automation, and ai-driven manufacturing
           </p>
           
           {/* Social Links */}
