@@ -16,13 +16,39 @@ const Experience = () => {
       ]
     },
     {
-      title: "mechatronics engineering graduate",
-      company: "university",
+      title: "buildspace n&w s5 fellow",
+      company: "buildspace",
+      location: "remote",
+      period: "2024",
+      description: "participated in the prestigious nights & weekends season 5 program, building and shipping innovative projects while learning from industry experts.",
+      achievements: [
+        "built and shipped a complete mechatronics project in 6 weeks",
+        "collaborated with a global community of builders and creators",
+        "received mentorship from successful entrepreneurs and engineers",
+        "developed skills in rapid prototyping and product development"
+      ]
+    },
+    {
+      title: "robotics team lead",
+      company: "college robotics club",
       location: "campus",
+      period: "2022 - 2023",
+      description: "led a team of 12 students in developing autonomous robots for national competitions. managed project timelines and coordinated between mechanical and software teams.",
+      achievements: [
+        "led team to 2nd place in national robotics competition",
+        "designed and implemented autonomous navigation systems",
+        "mentored junior students in robotics and programming",
+        "organized workshops on ros and embedded systems"
+      ]
+    },
+    {
+      title: "mechatronics engineering student",
+      company: "university",
+      location: "campus", 
       period: "2019 - 2023",
       description: "completed comprehensive coursework in mechanical engineering, electrical systems, and control theory with hands-on projects in robotics and automation.",
       achievements: [
-        "designed autonomous robotic systems for senior capstone",
+        "designed autonomous robotic systems for senior capstone project",
         "developed control algorithms for servo motor positioning",
         "completed internship in industrial automation",
         "graduated with honors in mechatronics engineering"

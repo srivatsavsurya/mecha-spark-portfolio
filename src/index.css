@@ -127,7 +127,7 @@ All colors MUST be HSL.
      TYPOGRAPHY UTILITIES
      ================================= */
   .small-caps {
-    @apply text-sm font-medium tracking-wider uppercase font-manrope;
+    @apply text-sm font-medium tracking-wider lowercase font-manrope;
   }
   
   /* =================================
