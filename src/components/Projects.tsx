@@ -103,7 +103,7 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
-                {/* GitHub Link */}
+                {/* GitHub Link
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a 
                     href={project.github}
@@ -113,7 +113,7 @@ const Projects = () => {
                   >
                     <Github className="w-4 h-4" />
                   </a>
-                </div>
+                </div> */}
               </div>
 
               {/* Project Content */}
