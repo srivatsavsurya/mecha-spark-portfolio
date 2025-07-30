@@ -1,4 +1,5 @@
-import { ExternalLink, Github } from "lucide-react";
+
+import { Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -12,8 +13,7 @@ const Projects = () => {
       description: "designed and built an autonomous navigation system using lidar sensors, computer vision, and path planning algorithms.",
       image: project1,
       technologies: ["ros", "python", "opencv", "lidar"],
-      github: "#",
-      demo: "#"
+      github: "#"
     },
     {
       id: "smart-manufacturing",
@@ -22,8 +22,7 @@ const Projects = () => {
       description: "developed a complete automation solution for quality control using machine vision and robotic arms.",
       image: project2,
       technologies: ["plc", "c++", "machine vision", "robotics"],
-      github: "#",
-      demo: "#"
+      github: "#"
     },
     {
       id: "industrial-robot-arm",
@@ -32,8 +31,7 @@ const Projects = () => {
       description: "designed and programmed a 6-degree-of-freedom industrial robot arm with precise positioning control.",
       image: project1,
       technologies: ["solidworks", "matlab", "c++", "servo control"],
-      github: "#",
-      demo: "#"
+      github: "#"
     },
     {
       id: "cnc-automation",
@@ -42,8 +40,7 @@ const Projects = () => {
       description: "automated cnc machining operations with robotic loading/unloading systems and real-time monitoring.",
       image: project2,
       technologies: ["fanuc", "ladder logic", "hmi", "scada"],
-      github: "#", 
-      demo: "#"
+      github: "#"
     },
     {
       id: "drone-swarm",
@@ -52,8 +49,7 @@ const Projects = () => {
       description: "developed a coordinated drone swarm system for search and rescue operations with autonomous navigation.",
       image: project1,
       technologies: ["pixhawk", "mavlink", "python", "opencv"],
-      github: "#",
-      demo: "#"
+      github: "#"
     },
     {
       id: "iot-sensor-network",
@@ -62,10 +58,16 @@ const Projects = () => {
       description: "created a wireless sensor network for industrial equipment monitoring with predictive maintenance.",
       image: project2,
       technologies: ["esp32", "lorawan", "tensorflow", "influxdb"],
-      github: "#",
-      demo: "#"
+      github: "#"
     }
   ];
+
+  const handleProjectClick = () => {
+    // Scroll to top when navigating to project page
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
 
   return (
     <section id="projects" className="py-20 px-4 bg-muted/30">
@@ -88,6 +90,7 @@ const Projects = () => {
             <Link 
               key={project.title}
               to={`/projects/${project.id}`}
+              onClick={handleProjectClick}
               className="group card-minimal hover-lift overflow-hidden fade-in block"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
@@ -100,50 +103,44 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
-                {/* Project Links */}
-                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* GitHub Link */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a 
                     href={project.github}
+                    onClick={(e) => e.stopPropagation()}
                     className="p-2 bg-black/20 backdrop-blur-sm rounded-lg text-white hover:bg-black/40 transition-colors"
                     aria-label="View source"
                   >
                     <Github className="w-4 h-4" />
                   </a>
-                  <a 
-                    href={project.demo}
-                    className="p-2 bg-black/20 backdrop-blur-sm rounded-lg text-white hover:bg-black/40 transition-colors"
-                    aria-label="View demo"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
                 </div>
               </div>
 
               {/* Project Content */}
-<div className="p-3">
-              <div>
-                <span className="small-caps text-primary text-sm font-medium">
-                  {project.category}
-                </span>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-200">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span 
-                      key={tech}
-                      className="small-caps px-3 py-1 bg-muted rounded-full text-xs text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <div className="p-3">
+                <div>
+                  <span className="small-caps text-primary text-sm font-medium">
+                    {project.category}
+                  </span>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-200">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span 
+                        key={tech}
+                        className="small-caps px-3 py-1 bg-muted rounded-full text-xs text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-</div>
               </div>
             </Link>
           ))}

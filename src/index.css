@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -115,10 +116,22 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
+    user-select: none;
   }
 
   body {
     @apply bg-background text-foreground font-manrope;
+    user-select: none;
+  }
+
+  /* Allow text selection for specific content */
+  p, h1, h2, h3, h4, h5, h6, span, a, li, td, th, .selectable {
+    user-select: text;
+  }
+
+  /* Prevent text selection for interactive elements */
+  button, .card-minimal, .btn-primary, .btn-secondary, nav, .hover-lift {
+    user-select: none;
   }
 }
 
@@ -134,7 +147,7 @@ All colors MUST be HSL.
      BUTTON COMPONENTS
      ================================= */
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg transition-all duration-300 font-manrope;
+    @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg transition-all duration-300 font-manrope cursor-pointer;
   }
   
   .btn-primary:hover {
@@ -142,21 +155,21 @@ All colors MUST be HSL.
   }
   
   .btn-secondary {
-    @apply bg-card border border-border text-foreground px-6 py-3 rounded-xl font-medium shadow-sm transition-all duration-300 font-manrope;
+    @apply bg-card border border-border text-foreground px-6 py-3 rounded-xl font-medium shadow-sm transition-all duration-300 font-manrope cursor-pointer;
   }
   
   /* =================================
      CARD COMPONENTS
      ================================= */
   .card-minimal {
-    @apply bg-card border border-border rounded-2xl p-1 shadow-sm hover:shadow-md transition-all duration-300;
+    @apply bg-card border border-border rounded-2xl p-1 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer;
   }
   
   /* =================================
      ANIMATION UTILITIES
      ================================= */
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer;
   }
   
   /* =================================
