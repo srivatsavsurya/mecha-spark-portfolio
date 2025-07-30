@@ -5,6 +5,7 @@ import project2 from "@/assets/project-2.jpg";
 const Projects = () => {
   const projects = [
     {
+      id: "autonomous-robot",
       title: "autonomous mobile robot",
       category: "mechatronics",
       description: "designed and built an autonomous navigation system using lidar sensors, computer vision, and path planning algorithms.",
@@ -14,6 +15,7 @@ const Projects = () => {
       demo: "#"
     },
     {
+      id: "smart-manufacturing",
       title: "smart manufacturing system", 
       category: "automation",
       description: "developed a complete automation solution for quality control using machine vision and robotic arms.",
@@ -23,6 +25,7 @@ const Projects = () => {
       demo: "#"
     },
     {
+      id: "industrial-robot-arm",
       title: "6-dof industrial robot arm",
       category: "robotics", 
       description: "designed and programmed a 6-degree-of-freedom industrial robot arm with precise positioning control.",
@@ -32,6 +35,7 @@ const Projects = () => {
       demo: "#"
     },
     {
+      id: "cnc-automation",
       title: "cnc machine automation",
       category: "automation",
       description: "automated cnc machining operations with robotic loading/unloading systems and real-time monitoring.",
@@ -41,6 +45,7 @@ const Projects = () => {
       demo: "#"
     },
     {
+      id: "drone-swarm",
       title: "autonomous drone swarm",
       category: "aerial robotics",
       description: "developed a coordinated drone swarm system for search and rescue operations with autonomous navigation.",
@@ -50,6 +55,7 @@ const Projects = () => {
       demo: "#"
     },
     {
+      id: "iot-sensor-network",
       title: "industrial iot monitoring",
       category: "embedded systems",
       description: "created a wireless sensor network for industrial equipment monitoring with predictive maintenance.",
@@ -78,9 +84,10 @@ const Projects = () => {
 
         <div className="grid lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div 
+            <a 
               key={project.title}
-              className="group card-minimal hover-lift overflow-hidden fade-in"
+              href={`/projects/${project.id}`}
+              className="group card-minimal hover-lift overflow-hidden fade-in block"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Project Image */}
@@ -137,7 +144,7 @@ const Projects = () => {
                 </div>
 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 

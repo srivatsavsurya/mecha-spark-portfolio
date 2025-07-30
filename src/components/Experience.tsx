@@ -83,7 +83,7 @@ const Experience = () => {
                 {/* Timeline Dot */}
                 <div className="absolute left-6 top-6 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg hidden md:block" />
                 
-                <div className="card-minimal hover-lift">
+                <div className="card-minimal hover-lift p-6">
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
                     <div>

@@ -20,7 +20,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Info */}
           <div className="slide-up">
-            <h3 className="text-2xl font-bold mb-8">let's connect</h3>
+            <h3 className="text-2xl font-bold mb-8">get in touch</h3>
             
             <div className="space-y-6 mb-8">
               <div className="flex items-center gap-4">

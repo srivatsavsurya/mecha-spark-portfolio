@@ -145,10 +145,6 @@ All colors MUST be HSL.
     @apply bg-card border border-border text-foreground px-6 py-3 rounded-xl font-medium shadow-sm transition-all duration-300 font-manrope;
   }
   
-  .btn-secondary:hover {
-    @apply shadow-md;
-  }
-  
   /* =================================
      CARD COMPONENTS
      ================================= */
