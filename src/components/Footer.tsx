@@ -40,21 +40,21 @@ const Footer = () => {
             <div className="flex items-center gap-4">
               <a
                 href="mailto:engineer@example.com"
-                className="p-3 bg-muted hover:bg-accent rounded-xl transition-colors duration-200"
+                className="p-3 rounded-full bg-card border border-border hover-lift"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="p-3 bg-muted hover:bg-accent rounded-xl transition-colors duration-200"
+                className="p-3 rounded-full bg-card border border-border hover-lift"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="p-3 bg-muted hover:bg-accent rounded-xl transition-colors duration-200"
+                className="p-3 rounded-full bg-card border border-border hover-lift"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />

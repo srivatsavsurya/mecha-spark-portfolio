@@ -1,4 +1,5 @@
 import { ExternalLink, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 
@@ -84,9 +85,9 @@ const Projects = () => {
 
         <div className="grid lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <a 
+            <Link 
               key={project.title}
-              href={`/projects/${project.id}`}
+              to={`/projects/${project.id}`}
               className="group card-minimal hover-lift overflow-hidden fade-in block"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
@@ -144,7 +145,7 @@ const Projects = () => {
                 </div>
 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
