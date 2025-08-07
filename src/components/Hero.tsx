@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Download, Twitter } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
@@ -53,6 +53,13 @@ const Hero = () => {
               aria-label="GitHub"
             >
               <Github className="w-5 h-5" />
+            </a>
+            <a 
+              href="#" 
+              className="p-3 rounded-full bg-card border border-border hover-lift"
+              aria-label="Twitter/X"
+            >
+              <Twitter className="w-5 h-5" />
             </a>
           </div>
           

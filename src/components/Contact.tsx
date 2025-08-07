@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Twitter } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -52,6 +52,16 @@ const Contact = () => {
                   <p className="font-medium">open to opportunities</p>
                 </div>
               </div>
+            </div>
+
+            <div className="flex items-center gap-4 mt-6">
+              <a
+                href="#"
+                className="p-3 rounded-full bg-card border border-border hover-lift"
+                aria-label="Twitter/X"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
             </div>
 
             <div className="p-6 bg-gradient-primary rounded-2xl text-white">
