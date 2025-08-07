@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
@@ -61,7 +61,8 @@ const Hero = () => {
             <a href="/projects" className="btn-primary">
               view my work
             </a>
-            <a href="/Srivatsav_Resume_.pdf" download className="btn-secondary">
+            <a href="/Srivatsav_Resume_.pdf" download className="btn-liquid" aria-label="Download resume">
+              <Download className="liquid-icon" aria-hidden="true" />
               download resume
             </a>
           </div>

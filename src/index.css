@@ -213,3 +213,60 @@ All colors MUST be HSL.
 html {
   scroll-behavior: smooth;
 }
+
+@layer components {
+  /* =================================
+     LIQUID GLASS BUTTON (iOS-style)
+     ================================= */
+  .btn-liquid {
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium cursor-pointer;
+    color: hsl(var(--foreground));
+    background: linear-gradient(180deg, hsl(var(--background) / 0.7), hsl(var(--background) / 0.5));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    transition: var(--transition-smooth);
+    overflow: hidden;
+  }
+
+  .btn-liquid::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background:
+      radial-gradient(120px 80px at var(--x, 0%) 50%, hsl(var(--primary) / 0.35), transparent 60%),
+      conic-gradient(from 180deg at 50% 50%, hsl(var(--primary-glow) / 0.35), transparent 40%, hsl(var(--ring) / 0.2));
+    opacity: 0.55;
+    filter: blur(22px);
+    transition: var(--transition-smooth);
+    pointer-events: none;
+  }
+
+  .btn-liquid:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
+    border-color: hsl(var(--ring));
+  }
+
+  .btn-liquid:hover::before {
+    opacity: 0.9;
+    animation: liquid-shift 6s linear infinite;
+  }
+
+  .btn-liquid:active {
+    transform: translateY(0);
+  }
+
+  .btn-liquid .liquid-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  @keyframes liquid-shift {
+    0% { --x: 0%; }
+    50% { --x: 100%; }
+    100% { --x: 0%; }
+  }
+}
+
