@@ -1,0 +1,266 @@
+%-------------------------
+% Resume in Latex
+% Author : Srivatsav N.D.
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\setlength{\footskip}{4.08003pt}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage[dvipsnames]{xcolor}
+\input{glyphtounicode}
+
+% Using FiraSans
+\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\footskip}{4.08003pt}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace {-10pt}\color{Blue}\raggedright\large\bfseries
+}{}{0em}{}[\color{Blue}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\workexp}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge\bfseries \MakeUppercase{SRIVATSAV N.D.}}\\[1pt]
+    \small
+    \raisebox{-0.1\height}\faPhone~+91 9943171536 ~|~ 
+    \raisebox{-0.2\height}\faEnvelope~\href{mailto:srivatsavsurya11@gmail.com}{srivatsavsurya11@gmail.com} ~|~ 
+    \raisebox{-0.2\height}\faLinkedin~\href{https://www.linkedin.com/in/srivatsav-n-d/}{srivatsav n.d.} ~|~ 
+    \raisebox{-0.2\height}\faGithub~\href{https://github.com/srivatsavsurya}{srivatsavsurya}
+\end{center}
+\vspace{-8pt}
+
+%-----------EDUCATION-----------
+\section*{EDUCATION}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Thiagarajar College of Engineering}{Madurai, Tamil Nadu}
+    {B.E. in Mechatronics Engineering \textbar{} CGPA: 8.39/10}{2020 -- 2024}
+
+  \resumeSubheading
+    {buildspace}{Remote}
+    {Project-based 6-week Program}{2023 -- 2024}
+
+\resumeSubHeadingListEnd
+%-----------EXPERIENCE-----------
+\section*{PROFESSIONAL EXPERIENCE}
+\resumeSubHeadingListStart
+
+  \workexp
+    {Software Development Engineer | alfaTKG}{Jun 2024 -- Present}
+    {}{}
+    \resumeItemListStart
+      \resumeItem{Developed AI-powered chatbot and scheduling systems, automating 70\% of customer queries.}
+      \resumeItem{Delivered a full-stack software suite for sheet metal manufacturing with real-time monitoring and analytics.}
+    \resumeItemListEnd
+
+  \workexp
+    {Robotic Simulation Engineer Intern | alfaTKG}{Dec 2022 -- Aug 2023}
+    {}{}
+    \resumeItemListStart
+      \resumeItem{Generated high-precision robotic simulations using RoboDK for Yaskawa robots, improving deployment accuracy.}
+      \resumeItem{Automated robot programming workflows, cutting process time by 60\%.}
+    \resumeItemListEnd
+
+  \workexp
+    {Open Source Developer | Timechain Labs}{May 2023 -- Jul 2023}
+    {}{}
+    \resumeItemListStart
+      \resumeItem{Integrated Bitcoin Lightning Network backend for processing 10K+ micropayments daily.}
+      \resumeItem{Designed "Add to Wallet" UI/UX for neucron.io, increasing engagement by 40\%.}
+    \resumeItemListEnd
+
+  \workexp
+    {Mechanical Design Engineer | Team Eureka}{Jun 2021 -- Nov 2022}
+    {}{}
+    \resumeItemListStart
+    \resumeItem{Contributed to a cross-functional team that won SAE-ISS 2022, supporting the management of a Rs.50K budget and advancing FEA for optimized bicycle frame design.}    \resumeItemListEnd
+    \vspace{3pt}
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section*{TECHNICAL PROJECTS}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{IntelliDrip} | \emph{IoT, Arduino, ESP32, Cloud Integration} | SIH (Cyient): SK2}
+  {\href{https://github.com/srivatsavsurya/intelliDrip}{\faGithub}}
+  \resumeItemListStart
+    \resumeItem{Built an IoT-based IV monitor with real-time alerts and predictive analytics, reducing attention time by 65\%.}
+    \resumeItem{Designed a modular, low-cost device compatible with 90\% of IV stands.}
+  \resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{AutoDrive} | \emph{Python, Computer Vision, ADAS, CARLA, CAN, \href{https://comma.ai/openpilot}{openpilot}}}
+  {\href{https://github.com/srivatsavsurya/AutoDrive}{\faGithub}}
+\resumeItemListStart
+  \resumeItem{Initiated development of a Level 2 autonomous driving stack targeting 95\%+ lane detection accuracy using CARLA simulator and CNN-based perception.}
+  \resumeItem{Designed real-time object detection and CAN-based vehicle control framework inspired by openpilot architecture.}
+\resumeItemListEnd
+
+  \resumeProjectHeading
+  {\textbf{Pothole Detection \& Reporting System} | \emph{IoT,  Raspberry Pi, ESP32, Cloud} | SIH (DRDO): NR1177}
+  {\href{https://github.com/srivatsavsurya/pothole-detection}{\faGithub}}
+  \resumeItemListStart
+    \resumeItem{Created ML model for pothole detection with 92\% accuracy using edge video feeds.}
+    \resumeItem{Developed scalable cloud backend with mobile reporting app for municipalities.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section*{TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=-1pt, label={}]
+    \small{\item{
+     \textbf{Programming}{: Python (OpenCV, TensorFlow, PyTorch, NumPy, Pandas), C/C++, JavaScript/TypeScript, HTML/CSS, SQL} \vspace{1pt}\\
+     \textbf{Technologies}{: Git, Linux, Docker, Arduino, Raspberry Pi, NodeMCU} \vspace{1pt}\\
+     \textbf{Design}{: SOLIDWORKS, Fusion360, EasyEDA, RoboDK} \vspace{1pt}\\
+     \textbf{Industrial}{: Bosch Rexroth PLC, Yaskawa Robots, MATLAB/Simulink, AI \& Machine Learning, Digital Twin, Industry 4.0}
+    }}
+ \end{itemize}
+ 
+%-----------ACHIEVEMENTS-----------
+\section*{AWARDS \& ACHIEVEMENTS}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Tamil Nadu Student Innovators (TNSI)}{2022}
+      {Selected among top 3 from 13,300+ applicants}{EDII-TN}
+      \resumeItemListStart
+        \resumeItem{Secured Rs.1 lakh funding and 6-month mentorship program for IntelliDrip project, leading to successful prototype development and clinical trials in 2 hospitals.}
+        \resumeItem{Featured in Tamil Nadu Innovation Hub and recognized by State MSME Minister for developing cost-effective healthcare solutions.}
+      \resumeItemListEnd
+    \vspace{1pt}
+    
+    \resumeSubheading
+      {SAE-ISS Bicycle Design Competition}{2022}
+      {Overall Championship}{National Level}
+      \resumeItemListStart
+        \resumeItem{Secured first place among 45+ teams nationwide, winning as Overall Performance Bicycle.}
+      \resumeItemListEnd
+    \vspace{1pt}
+    
+    \resumeSubheading
+      {Technical Achievements}{2020-2024}
+      {Various Competitions \& Certifications}{}
+      \resumeItemListStart
+        \resumeItem{Achieved 1st place in National IoT Quiz Challenge among 500+ participants, hosted by AICTE in collaboration with AWS and Intel.} 
+        \resumeItem{Top 5 finalist in SIH 2023 (Hardware Edition) – Problem SIH1375 by Ministry of Power;  informally recognized as runner-up by jury.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
+ 

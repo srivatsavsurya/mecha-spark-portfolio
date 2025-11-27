@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const Navigation = () => {
@@ -22,6 +23,8 @@ const Navigation = () => {
     { label: "contact", href: "#contact" }
   ];
 
+  const navigate = useNavigate();
+
   const scrollToSection = (href: string) => {
     if (href === "#projects") {
       // Check if we're already on projects page
@@ -29,16 +32,16 @@ const Navigation = () => {
         setIsOpen(false);
         return;
       }
-      window.location.href = "/projects";
+      navigate("/projects");
       return;
     }
-    
+
     // If we're not on the home page, go to home first
     if (window.location.pathname !== "/") {
-      window.location.href = "/" + href;
+      navigate("/" + href);
       return;
     }
-    
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -47,19 +50,18 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-background/25 backdrop-blur-md border-b border-border shadow-sm' 
-        : 'bg-transparent'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+      ? 'bg-background/25 backdrop-blur-md border-b border-border shadow-sm'
+      : 'bg-transparent'
+      }`}>
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a 
-            href="/" 
+          <a
+            href="/"
             className="small-caps font-bold text-lg hover:text-primary transition-colors duration-200"
           >
-            portfolio
+            srivatsav.
           </a>
 
           {/* Desktop Navigation */}

@@ -1,58 +1,73 @@
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, ExternalLink } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
-      title: "software development engineer",
-      company: "alfatkg",
-      location: "remote",
-      period: "2023 - present",
-      description: "developed scalable web applications and improved system performance by 40%. worked with modern frameworks and collaborated with cross-functional teams.",
+      title: "Software Development Engineer",
+      company: "alfaTKG",
+      location: "Remote",
+      period: "Jun 2024 - Present",
+      description: "Currently developing AI-powered solutions and full-stack software suites for manufacturing industry, focusing on automation and real-time analytics.",
       achievements: [
-        "built responsive web applications using react and typescript",
-        "optimized database queries reducing load times by 50%",
-        "implemented automated testing pipelines",
-        "collaborated with ui/ux teams for seamless user experiences"
+        "Developed AI-powered chatbot and scheduling systems, automating 70% of customer queries",
+        "Delivered a full-stack software suite for sheet metal manufacturing with real-time monitoring and analytics",
+        "Built intelligent manufacturing solutions improving operational efficiency"
       ]
     },
     {
-      title: "buildspace n&w s5 fellow",
-      company: "buildspace",
-      location: "remote",
-      period: "2024",
-      description: "participated in the prestigious nights & weekends season 5 program, building and shipping innovative projects while learning from industry experts.",
+      title: "Robotic Simulation Engineer Intern",
+      company: "alfaTKG",
+      location: "Remote",
+      period: "Dec 2022 - Aug 2023",
+      description: "Specialized in robotic simulation and automation workflows, working extensively with industrial robots and programming optimization.",
       achievements: [
-        "built and shipped a complete mechatronics project in 6 weeks",
-        "collaborated with a global community of builders and creators",
-        "received mentorship from successful entrepreneurs and engineers",
-        "developed skills in rapid prototyping and product development"
+        "Generated high-precision robotic simulations using RoboDK for Yaskawa robots, improving deployment accuracy",
+        "Automated robot programming workflows, cutting process time by 60%",
+        "Developed simulation frameworks for industrial automation systems"
       ]
     },
     {
-      title: "robotics team lead",
-      company: "college robotics club",
-      location: "campus",
-      period: "2022 - 2023",
-      description: "led a team of 12 students in developing autonomous robots for national competitions. managed project timelines and coordinated between mechanical and software teams.",
+      title: "Open Source Developer",
+      company: "Timechain Labs",
+      location: "Remote",
+      period: "May 2023 - Jul 2023",
+      description: "Contributed to Bitcoin Lightning Network integration and UI/UX development for cryptocurrency applications, focusing on micropayment systems.",
       achievements: [
-        "led team to 2nd place in national robotics competition",
-        "designed and implemented autonomous navigation systems",
-        "mentored junior students in robotics and programming",
-        "organized workshops on ros and embedded systems"
+        "Integrated Bitcoin Lightning Network backend for processing 10K+ micropayments daily",
+        "Designed 'Add to Wallet' UI/UX for neucron.io, increasing engagement by 40%",
+        "Implemented cryptocurrency transaction processing systems"
       ]
     },
     {
-      title: "mechatronics engineering student",
-      company: "university",
-      location: "campus", 
-      period: "2019 - 2023",
-      description: "completed comprehensive coursework in mechanical engineering, electrical systems, and control theory with hands-on projects in robotics and automation.",
+      title: "Mechanical Design Engineer",
+      company: "Team Eureka",
+      location: "Madurai, Tamil Nadu",
+      period: "Jun 2021 - Nov 2022",
+      description: "Worked as part of a cross-functional engineering team on bicycle design optimization, winning national competitions through advanced FEA and design methodologies.",
       achievements: [
-        "designed autonomous robotic systems for senior capstone project",
-        "developed control algorithms for servo motor positioning",
-        "completed internship in industrial automation",
-        "graduated with honors in mechatronics engineering"
+        "Contributed to winning SAE-ISS 2022 championship among 45+ teams nationwide",
+        "Managed Rs.50K budget and advanced FEA for optimized bicycle frame design",
+        "Collaborated with multidisciplinary team for performance optimization",
+        "Applied mechatronics principles to mechanical design challenges"
       ]
+    }
+  ];
+
+  const education = [
+    {
+      degree: "B.E. in Mechatronics Engineering",
+      institution: "Thiagarajar College of Engineering",
+      location: "Madurai, Tamil Nadu",
+      period: "2020 - 2024",
+      gpa: "CGPA: 8.39/10",
+      description: "Comprehensive program covering mechanical systems, electronics, control theory, and robotics with hands-on project experience."
+    },
+    {
+      degree: "Project-based 6-week Program",
+      institution: "buildspace",
+      location: "Remote",
+      period: "2023 - 2024",
+      description: "Intensive program focused on building and shipping innovative projects while learning from industry experts and global community."
     }
   ];
 
@@ -69,14 +84,14 @@ const Experience = () => {
           </h2>
         </div>
 
-        <div className="relative">
+        <div className="relative mb-20">
           {/* Timeline Line */}
           <div className="absolute left-8 top-0 bottom-0 w-px bg-border hidden md:block" />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div 
-                key={exp.title}
+                key={exp.title + exp.company}
                 className="relative pl-16 md:pl-20"
                 style={{ animationDelay: `${index * 0.3}s` }}
               >
@@ -128,6 +143,42 @@ const Experience = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Education Section */}
+        <div className="text-center mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold mb-8">education</h3>
+        </div>
+        
+        <div className="space-y-6">
+          {education.map((edu, index) => (
+            <div 
+              key={edu.degree + edu.institution}
+              className="card-minimal hover-lift p-6"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
+                <div>
+                  <h4 className="text-lg font-bold mb-1">{edu.degree}</h4>
+                  <p className="small-caps text-primary font-medium">{edu.institution}</p>
+                  {edu.gpa && <p className="text-sm text-muted-foreground">{edu.gpa}</p>}
+                </div>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2 sm:mt-0">
+                  <div className="flex items-center gap-1">
+                    <Calendar className="w-4 h-4" />
+                    {edu.period}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <MapPin className="w-4 h-4" />
+                    {edu.location}
+                  </div>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                {edu.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

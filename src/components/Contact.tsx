@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Send, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Linkedin, Github } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -13,7 +13,7 @@ const Contact = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            ready to bring innovative mechatronic solutions to your team
+            open to software development and mechatronics engineering opportunities
           </p>
         </div>
 
@@ -21,7 +21,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="slide-up">
             <h3 className="text-2xl font-bold mb-8">get in touch</h3>
-            
+
             <div className="space-y-6 mb-8">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary/10 rounded-xl">
@@ -29,46 +29,62 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="small-caps text-muted-foreground">email</p>
-                  <p className="font-medium">engineer@example.com</p>
+                  <a href="mailto:srivatsavsurya11@gmail.com" className="font-medium hover:text-primary transition-colors">
+                    srivatsavsurya11@gmail.com
+                  </a>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary/10 rounded-xl">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="small-caps text-muted-foreground">phone</p>
-                  <p className="font-medium">+1 (555) 123-4567</p>
+                  <a href="tel:+919943171536" className="font-medium hover:text-primary transition-colors">
+                    +91 9943171536
+                  </a>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary/10 rounded-xl">
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="small-caps text-muted-foreground">location</p>
-                  <p className="font-medium">open to opportunities</p>
+                  <p className="font-medium">India • Remote/Hybrid</p>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 mt-6">
+            <div className="flex items-center gap-4 mb-8">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/srivatsav-n-d/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-card border border-border hover-lift"
-                aria-label="Twitter/X"
+                aria-label="LinkedIn"
               >
-                <Twitter className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://github.com/srivatsavsurya"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full bg-card border border-border hover-lift"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
               </a>
             </div>
 
             <div className="p-6 bg-gradient-primary rounded-2xl text-white">
-              <h4 className="small-caps font-semibold mb-2">looking for</h4>
+              <h4 className="small-caps font-semibold mb-2">currently seeking</h4>
               <p className="text-white/90 leading-relaxed">
-                mechatronics engineering roles where i can apply my software development 
-                experience to create intelligent robotic systems and automation solutions.
+                software development roles that solve real-world problems and mechatronics engineering opportunities.
+                I thrive in environments where code interacts with the physical world, leveraging my expertise in
+                AI/ML, robotic simulation, and embedded systems.
               </p>
             </div>
           </div>
@@ -81,7 +97,7 @@ const Contact = () => {
                   <label className="small-caps text-muted-foreground block mb-2">
                     name
                   </label>
-                  <input 
+                  <input
                     type="text"
                     className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 outline-none"
                     placeholder="your name"
@@ -91,37 +107,37 @@ const Contact = () => {
                   <label className="small-caps text-muted-foreground block mb-2">
                     email
                   </label>
-                  <input 
+                  <input
                     type="email"
                     className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 outline-none"
                     placeholder="your email"
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label className="small-caps text-muted-foreground block mb-2">
                   subject
                 </label>
-                <input 
+                <input
                   type="text"
                   className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 outline-none"
                   placeholder="what's this about?"
                 />
               </div>
-              
+
               <div>
                 <label className="small-caps text-muted-foreground block mb-2">
                   message
                 </label>
-                <textarea 
+                <textarea
                   rows={5}
                   className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 outline-none resize-none"
-                  placeholder="tell me about your project..."
+                  placeholder="tell me about your project or opportunity..."
                 />
               </div>
-              
-              <button 
+
+              <button
                 type="submit"
                 className="w-full btn-primary flex items-center justify-center gap-2"
               >

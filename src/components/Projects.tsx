@@ -1,73 +1,65 @@
-
-import { Github } from "lucide-react";
+import { BentoGrid, BentoGridItem } from "@/components/ui/BentoGrid";
+import {
+  IconClipboardCopy,
+  IconFileBroken,
+  IconSignature,
+  IconTableColumn,
+} from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 
 const Projects = () => {
-  const projects = [
+  const items = [
     {
-      id: "autonomous-robot",
-      title: "autonomous mobile robot",
-      category: "mechatronics",
-      description: "designed and built an autonomous navigation system using lidar sensors, computer vision, and path planning algorithms.",
-      image: project1,
-      technologies: ["ros", "python", "opencv", "lidar"],
-      github: "#"
-    },
-    {
-      id: "smart-manufacturing",
-      title: "smart manufacturing system", 
-      category: "automation",
-      description: "developed a complete automation solution for quality control using machine vision and robotic arms.",
-      image: project2,
-      technologies: ["plc", "c++", "machine vision", "robotics"],
-      github: "#"
+      id: "drone-swarm",
+      title: "Autonomous Drone Swarm",
+      description: "Coordinated search and rescue swarm with distributed control and computer vision.",
+      header: <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100" />,
+      icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+      className: "md:col-span-2",
     },
     {
       id: "industrial-robot-arm",
-      title: "6-dof industrial robot arm",
-      category: "robotics", 
-      description: "designed and programmed a 6-degree-of-freedom industrial robot arm with precise positioning control.",
-      image: project1,
-      technologies: ["solidworks", "matlab", "c++", "servo control"],
-      github: "#"
-    },
-    {
-      id: "cnc-automation",
-      title: "cnc machine automation",
-      category: "automation",
-      description: "automated cnc machining operations with robotic loading/unloading systems and real-time monitoring.",
-      image: project2,
-      technologies: ["fanuc", "ladder logic", "hmi", "scada"],
-      github: "#"
-    },
-    {
-      id: "drone-swarm",
-      title: "autonomous drone swarm",
-      category: "aerial robotics",
-      description: "developed a coordinated drone swarm system for search and rescue operations with autonomous navigation.",
-      image: project1,
-      technologies: ["pixhawk", "mavlink", "python", "opencv"],
-      github: "#"
+      title: "6-DOF Robot Arm",
+      description: "Industrial robot arm with precise positioning and inverse kinematics control.",
+      header: <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100" />,
+      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+      className: "md:col-span-1",
     },
     {
       id: "iot-sensor-network",
-      title: "industrial iot monitoring",
-      category: "embedded systems",
-      description: "created a wireless sensor network for industrial equipment monitoring with predictive maintenance.",
-      image: project2,
-      technologies: ["esp32", "lorawan", "tensorflow", "influxdb"],
-      github: "#"
-    }
+      title: "IntelliDrip",
+      description: "IoT-based IV monitor with real-time alerts and predictive analytics. Reduces attention time by 65%.",
+      header: <img src={project1} alt="IntelliDrip" className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl object-cover" />,
+      icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+      className: "md:col-span-1",
+    },
+    {
+      id: "autonomous-robot",
+      title: "AutoDrive",
+      description: "Level 2 autonomous driving stack using CARLA simulator and CNN-based perception.",
+      header: <img src={project2} alt="AutoDrive" className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl object-cover" />,
+      icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+      className: "md:col-span-2",
+    },
+    {
+      id: "smart-manufacturing",
+      title: "RoboDK Simulation",
+      description: "High-precision robotic simulations for Yaskawa robots with automated programming workflows.",
+      header: <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100" />,
+      icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+      className: "md:col-span-1",
+    },
+    {
+      id: "cnc-automation",
+      title: "Pothole Detection",
+      description: "ML model for pothole detection with 92% accuracy using edge video feeds.",
+      header: <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100" />,
+      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+      className: "md:col-span-2",
+    },
   ];
-
-  const handleProjectClick = () => {
-    // Scroll to top when navigating to project page
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
-  };
 
   return (
     <section id="projects" className="py-20 px-4 bg-muted/30">
@@ -75,82 +67,34 @@ const Projects = () => {
         <div className="text-center mb-16">
           <p className="small-caps text-muted-foreground mb-4">portfolio</p>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tighter">
-            featured
+            engineering
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
-              projects
+              showcase
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            a showcase of mechatronic systems where software meets hardware
+            tangible systems, intelligent control, and real-world impact
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Link 
-              key={project.title}
-              to={`/projects/${project.id}`}
-              onClick={handleProjectClick}
-              className="group card-minimal hover-lift overflow-hidden fade-in block"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              {/* Project Image */}
-              <div className="relative overflow-hidden rounded-xl mb-6">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* GitHub Link
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a 
-                    href={project.github}
-                    onClick={(e) => e.stopPropagation()}
-                    className="p-2 bg-black/20 backdrop-blur-sm rounded-lg text-white hover:bg-black/40 transition-colors"
-                    aria-label="View source"
-                  >
-                    <Github className="w-4 h-4" />
-                  </a>
-                </div> */}
-              </div>
-
-              {/* Project Content */}
-              <div className="p-3">
-                <div>
-                  <span className="small-caps text-primary text-sm font-medium">
-                    {project.category}
-                  </span>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-200">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span 
-                        key={tech}
-                        className="small-caps px-3 py-1 bg-muted rounded-full text-xs text-muted-foreground"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+        <BentoGrid className="max-w-4xl mx-auto mb-12">
+          {items.map((item, i) => (
+            <Link key={i} to={`/projects/${item.id}`} className={item.className}>
+              <BentoGridItem
+                title={item.title}
+                description={item.description}
+                header={item.header}
+                icon={item.icon}
+                className="h-full"
+              />
             </Link>
           ))}
-        </div>
+        </BentoGrid>
 
-        {/* View All Projects Button */}
-        <div className="text-center mt-12">
-          <a href="/projects" className="btn-primary">
+        <div className="flex justify-center">
+          <Link to="/projects" className="btn-primary">
             view all projects
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -172,14 +172,14 @@ const Projects = () => {
           {/* Project Header */}
           <section className="py-12 px-4">
             <div className="max-w-4xl mx-auto">
-              <Link 
-                to="/projects" 
+              <Link
+                to="/projects"
                 className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 back to projects
               </Link>
-              
+
               <div className="mb-8">
                 <span className="small-caps text-primary text-sm font-medium">
                   {selectedProject.category}
@@ -190,16 +190,16 @@ const Projects = () => {
                 <p className="text-xl text-muted-foreground mb-6">
                   {selectedProject.description}
                 </p>
-                
+
                 <div className="flex gap-4">
-                  <a 
+                  <a
                     href={selectedProject.github}
                     className="btn-primary inline-flex items-center gap-2"
                   >
                     <Github className="w-4 h-4" />
                     view code
                   </a>
-                  <a 
+                  <a
                     href={selectedProject.demo}
                     className="btn-secondary inline-flex items-center gap-2"
                   >
@@ -216,9 +216,9 @@ const Projects = () => {
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {selectedProject.images.map((image, index) => (
-                  <img 
+                  <img
                     key={index}
-                    src={image} 
+                    src={image}
                     alt={`${selectedProject.title} ${index + 1}`}
                     className="w-full h-64 object-cover rounded-xl"
                   />
@@ -235,7 +235,7 @@ const Projects = () => {
                 <p className="text-muted-foreground leading-relaxed mb-8">
                   {selectedProject.fullDescription}
                 </p>
-                
+
                 <h3 className="text-xl font-bold mb-4">key features</h3>
                 <ul className="space-y-2">
                   {selectedProject.features.map((feature, index) => (
@@ -246,12 +246,12 @@ const Projects = () => {
                   ))}
                 </ul>
               </div>
-              
+
               <div>
                 <h3 className="text-xl font-bold mb-4">technologies used</h3>
                 <div className="flex flex-wrap gap-2 mb-8">
                   {selectedProject.technologies.map((tech) => (
-                    <span 
+                    <span
                       key={tech}
                       className="small-caps px-3 py-2 bg-muted rounded-full text-sm text-muted-foreground"
                     >
@@ -259,17 +259,17 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <h3 className="text-xl font-bold mb-4">project links</h3>
                 <div className="space-y-3">
-                  <a 
+                  <a
                     href={selectedProject.github}
                     className="flex items-center gap-3 p-3 border border-border rounded-lg hover:bg-muted transition-colors"
                   >
                     <Github className="w-5 h-5" />
                     <span>view source code</span>
                   </a>
-                  <a 
+                  <a
                     href={selectedProject.demo}
                     className="flex items-center gap-3 p-3 border border-border rounded-lg hover:bg-muted transition-colors"
                   >
@@ -314,13 +314,13 @@ const Projects = () => {
                 <Link
                   key={project.id}
                   to={`/projects/${project.id}`}
-                  className="group card-minimal hover-lift overflow-hidden block"
+                  className="group card-minimal hover-lift overflow-hidden block slide-up fade-in"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Project Image */}
                   <div className="relative overflow-hidden rounded-xl mb-6">
-                    <img 
-                      src={project.image} 
+                    <img
+                      src={project.image}
                       alt={project.title}
                       className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -338,11 +338,11 @@ const Projects = () => {
                     <p className="text-muted-foreground mb-4 leading-relaxed">
                       {project.description}
                     </p>
-                    
+
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.slice(0, 4).map((tech) => (
-                        <span 
+                        <span
                           key={tech}
                           className="small-caps px-3 py-1 bg-muted rounded-full text-xs text-muted-foreground"
                         >

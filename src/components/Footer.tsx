@@ -13,7 +13,7 @@ const Footer = () => {
               mechatronics engineer
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              passionate about bridging software and hardware to create 
+              passionate about bridging software and hardware to create
               intelligent mechanical systems that solve real-world problems.
             </p>
           </div>
@@ -39,21 +39,25 @@ const Footer = () => {
             <h4 className="small-caps font-semibold mb-4">let's connect</h4>
             <div className="flex items-center gap-4">
               <a
-                href="mailto:engineer@example.com"
+                href="mailto:srivatsavsurya11@gmail.com"
                 className="p-3 rounded-full bg-card border border-border hover-lift"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/srivatsav-n-d/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-card border border-border hover-lift"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://github.com/srivatsavsurya"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-card border border-border hover-lift"
                 aria-label="GitHub"
               >
@@ -69,7 +73,7 @@ const Footer = () => {
             © {currentYear} mechatronics portfolio. crafted with precision.
           </p>
           <div className="flex items-center gap-1 text-muted-foreground text-sm">
-            made with <Heart className="w-4 h-4 text-red-500 mx-1" fill="currentColor" /> 
+            made with <Heart className="w-4 h-4 text-red-500 mx-1" fill="currentColor" />
             and lots of coffee
           </div>
         </div>
