@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => ({
-  base: command === 'build' ? '/mecha-spark-portfolio/' : '/',
+  base: '/', // Changed: Always use '/' for custom domain
   server: {
     host: "::",
     port: 8080,
