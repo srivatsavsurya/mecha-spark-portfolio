@@ -1,91 +1,126 @@
-import { Github, Linkedin, Mail, Download, ArrowRight, CircuitBoard, Bot, Plane, Cpu } from "lucide-react";
-import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-image.jpg";
+import { Github, Linkedin, Mail, Download, Twitter } from "lucide-react";
+import profileImage from "@/assets/profile-image.png";
+import { useOverlay } from "./OverlayContext";
 
 const Hero = () => {
+  const { openOverlay } = useOverlay();
+
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-background">
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 -z-10 w-[50%] h-[50%] bg-gradient-primary opacity-5 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 left-0 -z-10 w-[50%] h-[50%] bg-blue-500 opacity-5 blur-[120px] rounded-full" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20">
+      {/* Subtle Background Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-      <div className="max-w-7xl mx-auto px-4 w-full grid lg:grid-cols-2 gap-12 items-center">
-        {/* Text Content */}
-        <div className="fade-in text-left z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted border border-border mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="small-caps text-xs font-medium">currently working & seeking jobs</span>
+      <div className="max-w-7xl mx-auto px-6 w-full">
+        <div className="grid lg:grid-cols-5 gap-12 items-center">
+
+          {/* Left Side - Profile Image */}
+          <div
+            className="lg:col-span-2 relative group cursor-pointer fade-in"
+            onClick={() => openOverlay(profileImage, "Srivatsav N D", "Mechatronics Engineer • Building intelligent machines")}
+          >
+            <div className="relative aspect-square overflow-hidden rounded-3xl border-2 border-border shadow-2xl">
+              <img
+                src={profileImage}
+                alt="Srivatsav N D"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                <p className="text-sm font-medium">💥</p>
+              </div>
+            </div>
+            {/* Decorative Elements */}
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl -z-10 animate-pulse-glow" />
+            <div className="absolute -top-4 -left-4 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl -z-10 animate-pulse-glow" />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tighter leading-[1.1]">
-            building
-            <span className="block text-muted-foreground">intelligent</span>
-            <span className="block bg-gradient-primary bg-clip-text text-transparent">
-              machines.
-            </span>
-          </h1>
+          {/* Right Side - Text Content */}
+          <div className="lg:col-span-3 space-y-8 fade-in" style={{ animationDelay: '0.2s' }}>
+            {/* Status Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="text-sm font-medium">Available for work</span>
+            </div>
 
-          <p className="text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            Mechatronics Engineer with a passion for bridging the gap between software and the physical world.
-          </p>
+            {/* Name & Title */}
+            <div>
+              <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] mb-4 text-shimmer">
+                Srivatsav N D
+              </h1>
+              <h2 className="text-3xl md:text-4xl font-bold text-muted-foreground tracking-tight">
+                Mechatronics Engineer
+              </h2>
+            </div>
 
-          <div className="flex flex-wrap gap-4 mb-12">
-            <Link to="/projects" className="btn-primary flex items-center gap-2 group">
-              view projects
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <a
-              href="/Srivatsav_Resume_.pdf"
-              download
-              className="btn-secondary flex items-center gap-2"
-              aria-label="Download resume"
-            >
-              <Download className="w-4 h-4" />
-              resume
-            </a>
-          </div>
+            {/* Description */}
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+              Building intelligent machines at the intersection of hardware and software.
+              Specializing in <span className="text-foreground font-semibold">robotics</span>,
+              <span className="text-foreground font-semibold"> avionics</span>, and
+              <span className="text-foreground font-semibold"> embedded systems</span>.
+            </p>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-6 text-muted-foreground">
-            <a href="https://github.com/srivatsavsurya" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-              <Github className="w-6 h-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/srivatsav-n-d/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a href="mailto:srivatsavsurya11@gmail.com" className="hover:text-foreground transition-colors">
-              <Mail className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="/Srivatsav_Resume_.pdf"
+                download
+                className="btn-primary flex items-center gap-2 group"
+              >
+                <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                Download Resume
+              </a>
+              <a
+                href="#contact"
+                className="btn-secondary flex items-center gap-2"
+              >
+                Get In Touch
+              </a>
+            </div>
 
-        {/* Visual Content - Single Interactive Card */}
-        <div className="relative hidden lg:block fade-in" style={{ animationDelay: '0.2s' }}>
-          {/* Background Glow */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-3xl -z-10 rounded-full animate-pulse-glow" />
-
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 aspect-square max-w-md mx-auto transform rotate-3 hover:rotate-0 transition-all duration-500 animate-float">
-            <img
-              src={heroImage}
-              alt="Mechatronics Engineering"
-              className="w-full h-full object-cover scale-110 hover:scale-100 transition-transform duration-700"
-            />
-            {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-
-            {/* Floating Badge 1 */}
-            <div className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl text-white animate-float-delayed">
-              <p className="small-caps text-xs text-white/70 mb-1">focus</p>
-              <p className="font-bold">Robotics & Avionics</p>
+            {/* Social Links */}
+            <div className="flex items-center gap-4 pt-4">
+              <a
+                href="https://github.com/srivatsavsurya"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-muted hover:bg-accent rounded-xl transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/srivatsav-n-d/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-muted hover:bg-accent rounded-xl transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:srivatsavsurya11@gmail.com"
+                className="p-3 bg-muted hover:bg-accent rounded-xl transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+              <a
+                href="https://x.com/srivatsavsurya"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-muted hover:bg-accent rounded-xl transition-colors"
+                aria-label="X (Twitter)"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute -top-12 -right-12 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl animate-pulse-glow" />
-          <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl animate-pulse-glow" />
         </div>
       </div>
     </section>

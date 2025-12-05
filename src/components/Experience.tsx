@@ -1,6 +1,10 @@
-import { Calendar, MapPin, ExternalLink } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
+import { useOverlay } from "./OverlayContext";
+import heroImage from "@/assets/hero-image.jpg";
 
 const Experience = () => {
+  const { openOverlay } = useOverlay();
+
   const experiences = [
     {
       title: "Software Development Engineer",
@@ -75,11 +79,11 @@ const Experience = () => {
     <section id="experience" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <p className="small-caps text-muted-foreground mb-4">journey</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            professional
+          <p className="small-caps text-muted-foreground mb-4">Journey</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+            Professional
             <span className="block bg-gradient-primary bg-clip-text text-transparent">
-              experience
+              Experience
             </span>
           </h2>
         </div>
@@ -90,19 +94,22 @@ const Experience = () => {
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
-              <div 
+              <div
                 key={exp.title + exp.company}
                 className="relative pl-16 md:pl-20"
                 style={{ animationDelay: `${index * 0.3}s` }}
               >
                 {/* Timeline Dot */}
                 <div className="absolute left-6 top-6 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg hidden md:block" />
-                
-                <div className="card-minimal hover-lift p-6">
+
+                <div
+                  className="card-minimal hover-lift p-6 cursor-pointer group"
+                  onClick={() => openOverlay(heroImage, exp.title, exp.description)}
+                >
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-bold mb-1">{exp.title}</h3>
+                      <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">{exp.title}</h3>
                       <p className="small-caps text-primary font-medium">{exp.company}</p>
                     </div>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2 sm:mt-0">
@@ -118,27 +125,9 @@ const Experience = () => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {exp.description}
                   </p>
-
-                  {/* Achievements */}
-                  <div>
-                    <h4 className="small-caps font-semibold mb-3 text-foreground">
-                      key achievements
-                    </h4>
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, i) => (
-                        <li 
-                          key={i}
-                          className="flex items-start gap-3 text-muted-foreground"
-                        >
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               </div>
             ))}
@@ -147,15 +136,16 @@ const Experience = () => {
 
         {/* Education Section */}
         <div className="text-center mb-12">
-          <h3 className="text-2xl md:text-3xl font-bold mb-8">education</h3>
+          <h3 className="text-2xl md:text-3xl font-extrabold mb-8">Education</h3>
         </div>
-        
+
         <div className="space-y-6">
           {education.map((edu, index) => (
-            <div 
+            <div
               key={edu.degree + edu.institution}
-              className="card-minimal hover-lift p-6"
+              className="card-minimal hover-lift p-6 cursor-pointer"
               style={{ animationDelay: `${index * 0.2}s` }}
+              onClick={() => openOverlay(heroImage, edu.degree, edu.description)}
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4">
                 <div>

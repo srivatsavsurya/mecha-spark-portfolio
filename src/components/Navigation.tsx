@@ -17,10 +17,9 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: "about", href: "#about" },
-    { label: "projects", href: "#projects" },
-    { label: "experience", href: "#experience" },
-    { label: "contact", href: "#contact" }
+    { label: "Projects", href: "#projects" },
+    { label: "Experience", href: "#experience" },
+    { label: "Contact", href: "#contact" }
   ];
 
   const navigate = useNavigate();
