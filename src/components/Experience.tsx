@@ -67,11 +67,11 @@ const Experience = () => {
       description: "Comprehensive program covering mechanical systems, electronics, control theory, and robotics with hands-on project experience."
     },
     {
-      degree: "Project-based 6-week Program",
+      degree: "nights & weekends",
       institution: "buildspace",
       location: "Remote",
       period: "2023 - 2024",
-      description: "Intensive program focused on building and shipping innovative projects while learning from industry experts and global community."
+      description: "Intensive 6-week program focused on building and shipping innovative projects while learning from industry experts and global community."
     }
   ];
 

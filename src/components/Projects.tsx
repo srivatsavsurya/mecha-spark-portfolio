@@ -63,7 +63,7 @@ const Projects = () => {
         {/* Header */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4">Selected Works</h2>
-          <p className="text-muted-foreground text-lg md:text-xl">Interaction & Engineering</p>
+          <p className="text-muted-foreground text-lg md:text-xl">...</p>
         </div>
 
         {/* Grid Layout */}

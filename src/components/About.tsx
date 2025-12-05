@@ -67,7 +67,7 @@ const About = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => openOverlay(profileImage, achievement.title, achievement.description)}
               >
-                <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-primary mb-4 group-hover:scale-110 origin-bottom-left transition-transform duration-300">
                   {achievement.icon}
                 </div>
                 <h4 className="font-semibold mb-2 text-sm group-hover:text-primary transition-colors">{achievement.title}</h4>

@@ -58,10 +58,11 @@ const Hero = () => {
 
             {/* Description */}
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              Building intelligent machines at the intersection of hardware and software.
-              Specializing in <span className="text-foreground font-semibold">robotics</span>,
+              Learning to bring hardware and software together through hands-on projects and curious tinkering.
+              Developing my skills in robotics, avionics, and embedded software. Passionate about Space
+              {/* <span className="text-foreground font-semibold">robotics</span>,
               <span className="text-foreground font-semibold"> avionics</span>, and
-              <span className="text-foreground font-semibold"> embedded systems</span>.
+              <span className="text-foreground font-semibold"> embedded systems</span>. */}
             </p>
 
             {/* CTA Buttons */}
