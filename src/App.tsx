@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
 import { OverlayProvider } from "@/components/OverlayContext";
 import Overlay from "@/components/Overlay";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
@@ -26,6 +27,7 @@ const App = () => (
           <Sonner />
           <Overlay />
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/projects" element={<Projects />} />
