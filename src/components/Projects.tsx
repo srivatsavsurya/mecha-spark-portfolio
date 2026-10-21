@@ -1,61 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
+import { projects } from "@/data/projects";
 
 const Projects = () => {
   const navigate = useNavigate();
-
-  const projects = [
-    {
-      id: "drone-swarm",
-      title: "Autonomous Drone Swarm",
-      category: "Robotics / AI",
-      description: "Coordinated search and rescue swarm with distributed control and computer vision.",
-      image: null,
-      color: "bg-blue-500",
-    },
-    {
-      id: "industrial-robot-arm",
-      title: "6-DOF Robot Arm",
-      category: "Industrial Automation",
-      description: "Industrial robot arm with precise positioning and inverse kinematics control.",
-      image: null,
-      color: "bg-orange-500",
-    },
-    {
-      id: "iot-sensor-network",
-      title: "IntelliDrip",
-      category: "IoT / Healthcare",
-      description: "IoT-based IV monitor with real-time alerts and predictive analytics.",
-      image: project1,
-      color: "bg-green-500",
-    },
-    {
-      id: "autonomous-robot",
-      title: "AutoDrive",
-      category: "Autonomous Systems",
-      description: "Level 2 autonomous driving stack using CARLA simulator and CNN-based perception.",
-      image: project2,
-      color: "bg-purple-500",
-    },
-    {
-      id: "smart-manufacturing",
-      title: "RoboDK Simulation",
-      category: "Simulation",
-      description: "High-precision robotic simulations for Yaskawa robots with automated programming workflows.",
-      image: null,
-      color: "bg-red-500",
-    },
-    {
-      id: "cnc-automation",
-      title: "Pothole Detection",
-      category: "Computer Vision",
-      description: "ML model for pothole detection with 92% accuracy using edge video feeds.",
-      image: null,
-      color: "bg-yellow-500",
-    },
-  ];
 
   return (
     <section id="projects" className="py-24 bg-background">
@@ -63,7 +11,7 @@ const Projects = () => {
         {/* Header */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4">Selected Works</h2>
-          <p className="text-muted-foreground text-lg md:text-xl">...</p>
+          <p className="text-muted-foreground text-lg md:text-xl">Things I&apos;ve built across vehicles, robots and software.</p>
         </div>
 
         {/* Grid Layout */}
